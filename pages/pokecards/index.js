@@ -39,7 +39,11 @@ const Pokemons = ({ arrayPokemon2 }) => {
       <div className="title">
         <div className={style.contentcards}>
           {arrayPokemon2.map((item, index) => {
-            return <Card key={index} item={item}></Card>;
+            return (
+              <div className={style.fadeinleft}>
+                <Card key={index} item={item}></Card>
+              </div>
+            );
           })}
         </div>
       </div>

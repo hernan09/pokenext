@@ -5,14 +5,19 @@ import style from './card.module.css';
 const card = ({ item }) => {
   let type = item.type[0].type.name;
   let type2 = item.type[1]?.type.name;
+
+  type2 === undefined ? '' : type2;
+
   console.log(type);
   return (
-    <div className={`${style.pokecard} ${type}`}>
-      <h3 className={style.title}>{item.name}</h3>
-      <span className={style.imgspan}>
-        <img className={style.img} src={item.img}></img>
-      </span>
-      <span className={`${style.span} ${type}`}>{type}</span>
+    <div class="panel" data-entrance="from-left">
+      <div className={`${style.pokecard} ${type}`}>
+        <h3 className={style.title}>{item.name}</h3>
+        <span className={`${style.imgspan} ${type2}`}>
+          <img className={style.img} src={item.img}></img>
+        </span>
+        <span className={`${style.span} ${type}`}>{type}</span>
+      </div>
     </div>
   );
 };
