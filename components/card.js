@@ -8,8 +8,10 @@ const card = ({ item }) => {
   console.log(type);
   return (
     <div className={`${style.pokecard} ${type}`}>
-      <h3>{item.name}</h3>
-      <img className={style.img} src={item.img}></img>
+      <h3 className={style.title}>{item.name}</h3>
+      <span className={style.imgspan}>
+        <img className={style.img} src={item.img}></img>
+      </span>
       <span className={`${style.span} ${type}`}>{type}</span>
     </div>
   );

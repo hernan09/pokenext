@@ -13,15 +13,14 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   cursor: pointer;
 }
+.title {
+  font-size: 34px;
+  text-transform: capitalize;
+}
 
 .img {
   max-width: 150px;
   max-height: 150px;
-  position: absolute;
-  left: 170px;
-  top: 0;
-  bottom: 0;
-  margin: auto;
 }
 
 .span {
@@ -36,14 +35,17 @@
   text-transform: capitalize;
 }
 
-.span2 {
+.imgspan {
   background-color: white;
-  color: red;
-  font-size: 20px;
-  border-radius: 5px;
-  padding: 4px;
+  border-top-left-radius: 100%;
+  padding: 5px;
+  height: 180px;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  right: 0;
-  top: 0;
-  font-weight: 700;
+  top: 110px;
+  left: 110px;
+  z-index: 1111;
 }
