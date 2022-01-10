@@ -10,7 +10,7 @@ const card = ({ item }) => {
 
   console.log(type);
   return (
-    <div className={`${style.pokecard} ${type}`}>
+    <div className={`${style.pokecard} ${type} hvr-float-shadow`}>
       <h3 className={style.title}>{item.name}</h3>
       <span className={`${style.imgspan} ${type2}`}>
         <img className={style.img} src={item.img}></img>
