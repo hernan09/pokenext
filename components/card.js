@@ -10,14 +10,14 @@ const card = ({ item }) => {
 
   console.log(type);
   return (
-    <div class="panel" data-entrance="from-left">
-      <div className={`${style.pokecard} ${type}`}>
-        <h3 className={style.title}>{item.name}</h3>
-        <span className={`${style.imgspan} ${type2}`}>
-          <img className={style.img} src={item.img}></img>
-        </span>
-        <span className={`${style.span} ${type}`}>{type}</span>
-      </div>
+    <div className={`${style.pokecard} ${type}`}>
+      <h3 className={style.title}>{item.name}</h3>
+      <span className={`${style.imgspan} ${type2}`}>
+        <img className={style.img} src={item.img}></img>
+      </span>
+      <span className={`${style.span} ${type}`}>
+        <p className={style.text}> {type}</p>
+      </span>
     </div>
   );
 };

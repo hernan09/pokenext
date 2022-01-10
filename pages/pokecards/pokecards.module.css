@@ -1,6 +1,6 @@
 .container {
   background-image: url('../../static/poke.jpeg');
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
   background-attachment: fixed;
   width: 100%;
