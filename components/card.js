@@ -15,9 +15,8 @@ const card = ({ item }) => {
       <span className={`${style.imgspan} ${type2}`}>
         <img className={style.img} src={item.img}></img>
       </span>
-      <span className={`${style.span} ${type}`}>
-        <p className={style.text}> {type}</p>
-      </span>
+      <span className={`${style.span} ${type}`}></span>
+      <p className={style.text}> {type}</p>
     </div>
   );
 };
