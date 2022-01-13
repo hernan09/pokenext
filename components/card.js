@@ -8,7 +8,6 @@ const card = ({ item }) => {
 
   type2 === undefined ? '' : type2;
 
-  console.log(type);
   return (
     <div className={`${style.pokecard} ${type} hvr-float-shadow`}>
       <h3 className={style.title}>{item.name}</h3>
