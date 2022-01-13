@@ -1,7 +1,7 @@
 import React from "react";
 
 export async function getStaticPaths() {
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=248&offset=0`);
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=898&offset=0`);
   const data = await res.json();
   
   let paths = data.results.map((pokemon) => {
