@@ -1,24 +1,14 @@
 import React from "react";
 
 export async function getStaticPaths() {
-
-  const traerPokemon = (numero) => {
-    return fetch(`https://pokeapi.co/api/v2/pokemon/${numero}`)
-      .then((res) => res.json())
-      .then((data) => data);
-  };
-
-  let arrayPokemon = [];
-
-  for (let index = 1; index <= 230; index++) {
-    let datapokemon = await traerPokemon(index);
-    arrayPokemon.push(datapokemon);
-  }
-
-  let paths = arrayPokemon.map((pokemon) => {
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=200&offset=200`);
+  const data = await res.json();
+  
+  let paths = data.results.map((pokemon) => {
+    console.log('LA DATAAAA', pokemon.name);
     return {
       params: {
-        name: pokemon.name.toString()
+        pokemon: pokemon.name.toString()
       }
     }
   });
@@ -31,7 +21,8 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async (context) => {
 
-  const id = context.params.name
+  
+  const id = context.params.pokemon
 
   console.log('el ID...', id)
     

@@ -42,8 +42,8 @@ const Pokemons = ({ arrayPokemon2 }) => {
             return (
               <div>
                 <Link href={{
-                  pathname : '/pokecard/[name]',
-                  query : { name : item.name }
+                  pathname : '/pokecard/[pokemon]',
+                  query : { pokemon : item.name }
                 }} key={item.id}>
                   <a>
                 <Card key={index} item={item}></Card>
