@@ -43,10 +43,10 @@ export const getStaticProps = async (context) => {
 };
 
 const cardPokemon = ({ pokemon }) => {
-  let type = pokemon.types[0].type.name;
-  let type2 = pokemon.types[1].type.name;
-  let habiliti = pokemon.abilities[0].ability.name;
-  let habiliti2 = pokemon.abilities[1].ability.name;
+  let type = pokemon.types?.[0]?.type?.name;
+  let type2 = pokemon.types?.[1]?.type?.name;
+  let habiliti = pokemon?.abilities?.[0]?.ability?.name;
+  let habiliti2 = pokemon?.abilities?.[1]?.ability?.name;
 
   return (
     <div className={`${style.main} ${type}`}>
