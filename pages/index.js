@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
 
   let arrayPokemon = [];
 
-  for (let index = 1; index <= 300; index++) {
+  for (let index = 1; index <= 400; index++) {
     let datapokemon = await traerPokemon(index);
     arrayPokemon.push(datapokemon);
   }
@@ -35,19 +35,22 @@ export const getStaticProps = async () => {
 
 const Pokemons = ({ arrayPokemon2 }) => {
   return (
-    <div className='container'>
+    <div className="container">
       <div className="title">
-        <div className='contentcards'>
+        <div className="contentcards">
           {arrayPokemon2.map((item, index) => {
             return (
               <div>
-                <Link href={{
-                  pathname : '/pokecard/[pokemon]',
-                  query : { pokemon : item.name }
-                }} key={item.id}>
+                <Link
+                  href={{
+                    pathname: '/pokecard/[pokemon]',
+                    query: { pokemon: item.name },
+                  }}
+                  key={item.id}
+                >
                   <a>
-                <Card key={index} item={item}></Card>
-                </a>
+                    <Card key={index} item={item}></Card>
+                  </a>
                 </Link>
               </div>
             );
