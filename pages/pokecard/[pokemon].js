@@ -17,7 +17,6 @@ export async function getStaticPaths() {
   }
 
   let paths = arrayPokemon.map((pokemon) => {
-    console.log('pokemon', pokemon);
     return {
       params: {
         pokemon: pokemon.name.toString(),
@@ -44,14 +43,11 @@ export const getStaticProps = async (context) => {
 };
 
 const cardPokemon = ({ pokemon }) => {
-  console.log({ pokemon });
   let type = pokemon.types[0].type.name;
   let type2 = pokemon.types[1].type.name;
-  let weight = pokemon.weight;
-
   let habiliti = pokemon.abilities[0].ability.name;
   let habiliti2 = pokemon.abilities[1].ability.name;
-  console.log(' EL TIPO', type, ' EL TIPO 2', type2);
+
   return (
     <div className={`${style.main} ${type}`}>
       <h1 className={style.title}>{pokemon.name}</h1>
