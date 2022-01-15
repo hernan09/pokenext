@@ -78,8 +78,9 @@
     display: grid;
     width: 95%;
     height: 390px;
-    border-radius: 100%;
+    border-radius: 10px;
     position: absolute;
+    border: 10px solid white;
   }
   .contentspan {
     width: 330px;
@@ -101,7 +102,8 @@
   .subdiv {
     width: 500px;
     height: 450px;
-    border-radius: 100%;
+    border-radius: 10px;
+    border: 10px solid white;
     position: absolute;
     padding: 15px;
   }
