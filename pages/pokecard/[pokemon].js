@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import style from './pokemon.module.css';
+import Link from 'next/link';
 
 export async function getStaticPaths() {
   const traerPokemon = (numero) => {
@@ -11,7 +12,7 @@ export async function getStaticPaths() {
 
   let arrayPokemon = [];
 
-  for (let index = 1; index <= 400; index++) {
+  for (let index = 1; index <= 2; index++) {
     let datapokemon = await traerPokemon(index);
     arrayPokemon.push(datapokemon);
   }
@@ -50,6 +51,16 @@ const cardPokemon = ({ pokemon }) => {
 
   return (
     <div className={`${style.main} ${type}`}>
+      <Link
+        href={{
+          pathname: '/',
+        }}
+      >
+        <a>
+          <button className={style.back}>VOLVER</button>
+        </a>
+      </Link>
+
       <h1 className={style.title}>{pokemon.name}</h1>
       <img
         className={style.imgencard}
