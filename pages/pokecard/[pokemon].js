@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
   let arrayPokemon = [];
 
-  for (let index = 1; index <= 400; index++) {
+  for (let index = 1; index <= 600; index++) {
     let datapokemon = await traerPokemon(index);
     arrayPokemon.push(datapokemon);
   }
@@ -50,7 +50,7 @@ const cardPokemon = ({ pokemon }) => {
   let habiliti2 = pokemon?.abilities?.[1]?.ability?.name;
 
   return (
-    <div className={`${style.main} ${type}`}>
+    <div className={`${style.main}`}>
       <Link
         href={{
           pathname: '/',

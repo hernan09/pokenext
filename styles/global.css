@@ -121,6 +121,8 @@
   box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
   padding: 6px;
   margin-left: 4%;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 .searchtitle {
   color: #686666;
