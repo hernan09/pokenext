@@ -13,7 +13,7 @@ export const getStaticProps = async () => {
 
   let arrayPokemon = [];
 
-  for (let index = 1; index <= 600; index++) {
+  for (let index = 1; index <= 40; index++) {
     let datapokemon = await traerPokemon(index);
     arrayPokemon.push(datapokemon);
   }
@@ -38,15 +38,17 @@ const Pokemons = ({ arrayPokemon2 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   return (
     <div className="container">
-      <h3 className="searchtitle">SEARCH</h3>
-      <input
-        className="inputsearch"
-        type="text"
-        placeholder="Search pokemon name"
-        onChange={(event) => {
-          setSearchTerm(event.target.value);
-        }}
-      ></input>
+      <div className="content_search">
+        <h3 className="searchtitle">SEARCH</h3>
+        <input
+          className="inputsearch"
+          type="text"
+          placeholder="Search pokemon name"
+          onChange={(event) => {
+            setSearchTerm(event.target.value);
+          }}
+        ></input>
+      </div>
       <div className="title">
         <div className="contentcards">
           {arrayPokemon2
