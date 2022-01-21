@@ -42,7 +42,7 @@ const Pokemons = ({ arrayPokemon2 }) => {
       <input
         className="inputsearch"
         type="text"
-        placeholder="Search"
+        placeholder="Search pokemon name"
         onChange={(event) => {
           setSearchTerm(event.target.value);
         }}
