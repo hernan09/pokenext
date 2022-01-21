@@ -57,7 +57,7 @@ const cardPokemon = ({ pokemon }) => {
         }}
       >
         <a>
-          <button className={style.back}>VOLVER</button>
+          <button className={style.back}>Back</button>
         </a>
       </Link>
 

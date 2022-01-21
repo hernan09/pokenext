@@ -1,5 +1,6 @@
 import Card from '../components/card.js';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export const getStaticProps = async () => {
   // Call an external API endpoint to get posts.
@@ -34,27 +35,47 @@ export const getStaticProps = async () => {
 };
 
 const Pokemons = ({ arrayPokemon2 }) => {
+  const [searchTerm, setSearchTerm] = useState('');
   return (
     <div className="container">
+      <h3 className="searchtitle">SEARCH</h3>
+      <input
+        className="inputsearch"
+        type="text"
+        placeholder="Search"
+        onChange={(event) => {
+          setSearchTerm(event.target.value);
+        }}
+      ></input>
       <div className="title">
         <div className="contentcards">
-          {arrayPokemon2.map((item, index) => {
-            return (
-              <div>
-                <Link
-                  href={{
-                    pathname: '/pokecard/[pokemon]',
-                    query: { pokemon: item.name },
-                  }}
-                  key={item.id}
-                >
-                  <a>
-                    <Card key={index} item={item}></Card>
-                  </a>
-                </Link>
-              </div>
-            );
-          })}
+          {arrayPokemon2
+            .filter((item) => {
+              if (searchTerm == '') {
+                return item;
+              } else if (
+                item.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+              ) {
+                return item;
+              }
+            })
+            .map((item, index) => {
+              return (
+                <div>
+                  <Link
+                    href={{
+                      pathname: '/pokecard/[pokemon]',
+                      query: { pokemon: item.name },
+                    }}
+                    key={item.id}
+                  >
+                    <a>
+                      <Card key={index} item={item}></Card>
+                    </a>
+                  </Link>
+                </div>
+              );
+            })}
         </div>
       </div>
     </div>

@@ -111,9 +111,25 @@
   background-position: center center;
   background-attachment: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   margin: 0;
   color: white;
+}
+.inputsearch {
+  border: 2px solid whitesmoke;
+  width: 90%;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+  padding: 6px;
+  margin-left: 4%;
+}
+.searchtitle {
+  color: #686666;
+  font-weight: 700;
+  width: 100px;
+  text-transform: uppercase;
+  /* align-items: center; */
+  margin: auto;
+  margin-bottom: 10px;
 }
 
 .contentcards {
