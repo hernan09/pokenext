@@ -118,7 +118,10 @@
   position: fixed;
   z-index: 10;
   margin-top: -75px;
-  margin-left: -5px;
+  margin-left: -8px;
+  background: #484646;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .inputsearch {
   border: 2px solid whitesmoke;
@@ -128,9 +131,10 @@
   margin-left: 4%;
   border-radius: 10px;
   margin-bottom: 15px;
+  outline: none;
 }
 .searchtitle {
-  color: #686666;
+  color: #ffffff;
   font-weight: 700;
   width: 100px;
   text-transform: uppercase;
