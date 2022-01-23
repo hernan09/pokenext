@@ -13,7 +13,7 @@ export const getStaticProps = async () => {
 
   let arrayPokemon = [];
 
-  for (let index = 1; index <= 300; index++) {
+  for (let index = 1; index <= 5; index++) {
     let datapokemon = await traerPokemon(index);
     arrayPokemon.push(datapokemon);
   }
