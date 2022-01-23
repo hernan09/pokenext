@@ -1,7 +1,6 @@
 import Card from '../components/card.js';
 import Link from 'next/link';
-import cache from 'memory-cache';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export const getStaticProps = async () => {
   // Call an external API endpoint to get posts.
@@ -36,9 +35,6 @@ export const getStaticProps = async () => {
 };
 
 const Pokemons = ({ arrayPokemon2 }) => {
-  useEffect(() => {
-    localStorage.setItem('pokemons', JSON.stringify(arrayPokemon2));
-  }, []);
   const [searchTerm, setSearchTerm] = useState('');
   return (
     <div className="container">
