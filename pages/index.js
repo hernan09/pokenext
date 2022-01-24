@@ -62,7 +62,6 @@ const Pokemons = ({ arrayPokemon2 }) => {
   return (
     <div className="container">
       <div className="content_search">
-        <h3 className="searchtitle">SEARCH</h3>
         <input
           className="inputsearch"
           type="text"
