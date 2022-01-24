@@ -1,19 +1,29 @@
 import Card from '../components/card.js';
 import Link from 'next/link';
+import cache from "memory-cache";
 import { useState } from 'react';
 
 export const getStaticProps = async () => {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
   const traerPokemon = (numero) => {
-    return fetch(`https://pokeapi.co/api/v2/pokemon/${numero}`)
+    const cachedResponse = cache.get(`https://pokeapi.co/api/v2/pokemon/${numero}`);
+    if (cachedResponse) {
+      return cachedResponse;
+    } else {
+      return fetch(`https://pokeapi.co/api/v2/pokemon/${numero}`)
       .then((res) => res.json())
-      .then((data) => data);
+      .then((data) => {
+        let hour = 24;
+        cache.put(`https://pokeapi.co/api/v2/pokemon/${numero}`, data, hour*1000*60*60)
+        return data;
+      });
+    }
   };
 
   let arrayPokemon = [];
 
-  for (let index = 1; index <= 600; index++) {
+  for (let index = 1; index <= 300; index++) {
     let datapokemon = await traerPokemon(index);
     arrayPokemon.push(datapokemon);
   }
@@ -32,6 +42,19 @@ export const getStaticProps = async () => {
       arrayPokemon2,
     },
   };
+};
+
+const cachedFetch = async (url) => {
+  const cachedResponse = cache.get(url);
+  if (cachedResponse) {
+    return cachedResponse;
+  } else {
+    const hours = 24;
+    const response = await fetch(url);
+    const data = await response.json();
+    cache.put(url, data, hours * 1000 * 60 * 60);
+    return data;
+  }
 };
 
 const Pokemons = ({ arrayPokemon2 }) => {
