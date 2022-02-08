@@ -174,16 +174,19 @@
 }
 @media (min-width: 451px) {
   .subdiv {
-    width: 501px;
+    width: 413px;
     height: 450px;
-    border-top-left-radius: 100%;
-    border: 10px solid white;
+    border-radius: 100%;
+    /* border-top-left-radius: 100%; */
+    border: 10px solid #fff;
     position: absolute;
     padding: 15px;
+    border: 12px solid #484646;
+    background-color: white;
     margin-left: 8px;
-    -webkit-animation: fade-in-left 0.6s cubic-bezier(0.39, 0.575, 0.565, 1)
-      both;
-    animation: fade-in-left 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    margin-bottom: -62px;
+    -webkit-animation: pokemon_fade-in-left__JoG_V .6s cubic-bezier(.39,.575,.565,1) both;
+    animation: pokemon_fade-in-left__JoG_V .6s cubic-bezier(.39,.575,.565,1) both;
   }
   .imgencard {
     width: 300px;

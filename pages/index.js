@@ -36,6 +36,7 @@ export const getStaticProps = async () => {
       type: pokemon.types,
     };
   });
+ 
 
   return {
     props: {
@@ -44,9 +45,9 @@ export const getStaticProps = async () => {
   };
 };
 
-
 const Pokemons = ({ arrayPokemon2 }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  
   return (
     <div className="container">
       <div className="content_search">
@@ -60,7 +61,7 @@ const Pokemons = ({ arrayPokemon2 }) => {
         ></input>
       </div>
       <div className="title">
-        <div className="contentcards">
+        <div className="contentcards">    
           {arrayPokemon2
             .filter((item) => {
               if (searchTerm == '') {
